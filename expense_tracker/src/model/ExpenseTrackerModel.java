@@ -5,7 +5,8 @@ import java.util.List;
 
 public class ExpenseTrackerModel {
 
-  public List<Transaction> transactions;
+  // private field to encapsulate data
+  private List<Transaction> transactions;
 
   public ExpenseTrackerModel() {
     transactions = new ArrayList<>(); 
