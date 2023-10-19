@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class ExpenseTrackerModel {
 
@@ -21,7 +22,8 @@ public class ExpenseTrackerModel {
   }
 
   public List<Transaction> getTransactions() {
-    return transactions;
+    // Create new ArrayList containing same Transaction objects as the 'transactions' list
+    return Collections.unmodifiableList(new ArrayList<>(transactions));
   }
 
 }
