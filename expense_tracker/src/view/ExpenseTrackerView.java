@@ -3,6 +3,8 @@ package view;
 import javax.swing.*;
 import javax.swing.JFormattedTextField.AbstractFormatterFactory;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
 import controller.InputValidation;
 
@@ -50,7 +52,25 @@ public class ExpenseTrackerView extends JFrame {
     categoryDropdown = new JComboBox<>(new String[]{"Category", "Amount"});
 
     // Create table
-    transactionsTable = new JTable(model);
+    transactionsTable = new JTable(model){
+
+      public TableCellRenderer getCellRenderer(int row, int column) {
+        return new DefaultTableCellRenderer() {
+          @Override
+          public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Check if the row is in the selectedRows list
+            if (selectedRows.contains(row)) {
+              c.setBackground(new Color(173, 255, 168)); // Light green
+            } else {
+              c.setBackground(table.getBackground());
+            }
+            return c;
+          }
+        };
+      }
+    };
   
     // Layout components
     JPanel inputPanel = new JPanel();
