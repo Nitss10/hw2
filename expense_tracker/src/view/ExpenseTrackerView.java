@@ -72,7 +72,7 @@ public class ExpenseTrackerView extends JFrame {
 
 
     // Create the buttonPanel with a GridLayout
-    JPanel buttonPanel = new JPanel(new GridLayout(1, 4)); // Two buttons in a row
+    JPanel buttonPanel = new JPanel(new GridLayout(1, 4));
     buttonPanel.add(addTransactionPanel);
     buttonPanel.add(categoryDropdownPanel);
     buttonPanel.add(filterFieldPanel);
@@ -84,7 +84,7 @@ public class ExpenseTrackerView extends JFrame {
     add(buttonPanel, BorderLayout.SOUTH);
   
     // Set frame properties
-    setSize(400, 300);
+    setSize(800, 600);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
   
