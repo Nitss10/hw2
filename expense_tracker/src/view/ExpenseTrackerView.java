@@ -10,6 +10,8 @@ import java.awt.*;
 import java.text.NumberFormat;
 
 import model.Transaction;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExpenseTrackerView extends JFrame {
@@ -19,7 +21,7 @@ public class ExpenseTrackerView extends JFrame {
   private JFormattedTextField amountField;
   private JTextField categoryField;
   private DefaultTableModel model;
-  
+  private List<Integer> selectedRows = new ArrayList<>();
 
   public ExpenseTrackerView() {
     setTitle("Expense Tracker"); // Set title
@@ -124,5 +126,10 @@ public class ExpenseTrackerView extends JFrame {
 
   public void setCategoryField(JTextField categoryField) {
     this.categoryField = categoryField;
+  }
+
+  public void setSelectedRows(List<Integer> colouredRows)
+  {
+    selectedRows = colouredRows;
   }
 }
