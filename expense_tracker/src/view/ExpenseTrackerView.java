@@ -59,9 +59,24 @@ public class ExpenseTrackerView extends JFrame {
     inputPanel.add(categoryLabel); 
     inputPanel.add(categoryField);
     inputPanel.add(addTransactionBtn);
-  
-    JPanel buttonPanel = new JPanel();
-    buttonPanel.add(addTransactionBtn);
+
+
+    JPanel addTransactionPanel = new JPanel();
+    addTransactionPanel.add(addTransactionBtn);
+    JPanel filterPanel = new JPanel();
+    filterPanel.add(filterBtn);
+    JPanel filterFieldPanel = new JPanel();
+    filterFieldPanel.add(filterField);
+    JPanel categoryDropdownPanel = new JPanel();
+    categoryDropdownPanel.add(categoryDropdown);
+
+
+    // Create the buttonPanel with a GridLayout
+    JPanel buttonPanel = new JPanel(new GridLayout(1, 4)); // Two buttons in a row
+    buttonPanel.add(addTransactionPanel);
+    buttonPanel.add(categoryDropdownPanel);
+    buttonPanel.add(filterFieldPanel);
+    buttonPanel.add(filterPanel);
   
     // Add panels to frame
     add(inputPanel, BorderLayout.NORTH);
