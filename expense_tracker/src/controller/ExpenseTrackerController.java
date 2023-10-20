@@ -17,6 +17,8 @@ public class ExpenseTrackerController {
   private ExpenseTrackerModel model;
   private ExpenseTrackerView view;
 
+  List<Integer> emptySelectedList = new ArrayList<>();
+
 
   public ExpenseTrackerController(ExpenseTrackerModel model, ExpenseTrackerView view) {
     this.model = model;
@@ -46,6 +48,7 @@ public class ExpenseTrackerController {
     Transaction t = new Transaction(amount, category);
     model.addTransaction(t);
     view.getTableModel().addRow(new Object[]{t.getAmount(), t.getCategory(), t.getTimestamp()});
+    view.setSelectedRows(emptySelectedList);
     refresh();
     return true;
   }
