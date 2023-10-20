@@ -119,6 +119,19 @@ public class ExpenseTrackerView extends JFrame {
   public JButton getAddTransactionBtn() {
     return addTransactionBtn;
   }
+
+  public JButton getFilterBtn() {
+    return filterBtn;
+  }
+
+  public String getFilterField() {
+    return filterField.getText();
+  }
+
+  public String getDropDownOption(){
+    return (String)categoryDropdown.getSelectedItem();
+  }
+
   public DefaultTableModel getTableModel() {
     return model;
   }
